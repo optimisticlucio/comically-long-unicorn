@@ -8,6 +8,12 @@ public class DraggableBobaTea : MonoBehaviour
 
     public BobaTea m_BobaTea;
 
+    [SerializeField] Sprite m_LiquidSprite;
+
+    [SerializeField] Sprite m_TapiocaSprite;
+
+    [SerializeField] Sprite m_LidSprite;
+
     void Update()
     {
         if (!isDraggable) return;
@@ -46,7 +52,7 @@ public class DraggableBobaTea : MonoBehaviour
     }
 
     public void UpdateVisuals() {
-        Sprite appropriateDrinkSprite = m_BobaTea.Liquid.GetSprite();
+        Sprite appropriateDrinkSprite = m_BobaTea.m_Liquid.GetSprite();
         // TODO - Actually update.
     }
 
