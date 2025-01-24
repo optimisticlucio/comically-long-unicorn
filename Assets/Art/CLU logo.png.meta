@@ -141,6 +141,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -509,7 +522,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CLU logo_0: -4524378880251846428
+      CLU logo_1: 6922033125796413435
+      CLU logo_10: -254660916755995192
+      CLU logo_11: 1162456546332980694
+      CLU logo_12: 6596809397277875063
+      CLU logo_13: -3271675220090666674
+      CLU logo_14: -7077881709421181523
+      CLU logo_15: 2223618317933586044
+      CLU logo_2: 9187450447052889125
+      CLU logo_3: 807920273561294635
+      CLU logo_4: -7871350377038530644
+      CLU logo_5: 8520918605642844280
+      CLU logo_6: 3900273802931145108
+      CLU logo_7: -8838897397197619952
+      CLU logo_8: 1855355321326398092
+      CLU logo_9: -4822741074979964190
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

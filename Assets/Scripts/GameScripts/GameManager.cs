@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     List<Customer> m_WaitingCustomers = new List<Customer>();
     [SerializeField] int m_MaxCustomersAtOnce = 1;
+    [SerializeField] float m_DayTimeLeft = 60f;
 
     float m_TimeToNextCustomer = 5f;
 
@@ -19,7 +20,23 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WaitForNextCustomer();
+        UpdateDaytime();
+
+        if (m_DayTimeLeft >= 0) {
+            WaitForNextCustomer();
+
+            foreach (Customer customer in m_WaitingCustomers) {
+                if (customer.isAnnoyed()) {
+                    // TODO - Make customer leave!
+                }
+            }
+        } 
+    }
+
+    void UpdateDaytime() {
+        m_DayTimeLeft -= Time.deltaTime;
+
+        // TODO - Check if day is over?
     }
 
     void WaitForNextCustomer() {
@@ -44,6 +61,7 @@ public class GameManager : MonoBehaviour
             return true;
         }
         else {
+            // TODO - Give user indication of what's wrong! Noise, animation, whatever
             return false;
         }
     }
