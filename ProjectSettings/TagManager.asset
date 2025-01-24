@@ -41,5 +41,26 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 550699333
+    locked: 0
+  - name: Customer
+    uniqueID: 3687397973
+    locked: 0
+  - name: Table
+    uniqueID: 157938069
+    locked: 0
+  - name: Machine
+    uniqueID: 2001924477
+    locked: 0
+  - name: ' Buttons'
+    uniqueID: 2180219287
+    locked: 0
+  - name: Cup
+    uniqueID: 1505498965
+    locked: 0
+  - name: Holding
+    uniqueID: 3858787605
+    locked: 0
   m_RenderingLayers:
   - Default

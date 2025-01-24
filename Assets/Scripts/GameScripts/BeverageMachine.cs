@@ -11,9 +11,9 @@ public class BeverageMachine : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        foreach (BeverageMachineBtn button in m_Buttons) {
-            button.m_ParentBeverageMachine = this;
-        }
+        // foreach (BeverageMachineBtn button in m_Buttons) {
+        //     button.m_ParentBeverageMachine = this;
+        // }
     }
 
     // Update is called once per frame

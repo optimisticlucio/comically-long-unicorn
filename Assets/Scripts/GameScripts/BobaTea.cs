@@ -92,7 +92,7 @@ public static class EnumExtensions {
                 spriteResource += "black";
                 break;
             case BobaTea.Liquid.Matcha:
-                spriteResource += "green";
+                spriteResource += "brown";
                 break;
             case BobaTea.Liquid.Strawberry:
                 spriteResource += "pink";
