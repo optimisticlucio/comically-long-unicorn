@@ -1,63 +1,52 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class DraggabelBobaTea : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DraggableBoba : MonoBehaviour
 {
-    private Vector3 originalPosition;
-    private Canvas canvas;
-    private RectTransform rectTransform;
-    private CanvasGroup canvasGroup;
+    private bool isDragging = false;
+    private Vector3 offset;
 
-    public BobaTea bobaTea;
+    public BobaTea m_BobaTea;
 
-    private void Start()
+    void Update()
     {
-        canvas = FindObjectOfType<Canvas>();  // Find the UI canvas
-        rectTransform = GetComponent<RectTransform>();
-        canvasGroup = GetComponent<CanvasGroup>();
-
-        if (canvasGroup == null)
+        if (Input.GetMouseButtonDown(0))
         {
-            canvasGroup = gameObject.AddComponent<CanvasGroup>();
-            print("canvas is null");
+            print("Mouse Clicked");
+            CheckMouseDown();
+        }
+
+        if (isDragging)
+        {
+            DragObject();
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            isDragging = false;
         }
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    private void CheckMouseDown()
     {
-        originalPosition = rectTransform.position;
-        canvasGroup.alpha = 0.6f; // Make it slightly transparent while dragging
-        canvasGroup.blocksRaycasts = false;  // Prevent blocking raycasts to detect drop targets
-    }
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.GetRayIntersection(ray);
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        rectTransform.position = Input.mousePosition;  // Follow the mouse position
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        canvasGroup.alpha = 1.0f;
-        canvasGroup.blocksRaycasts = true;
-
-        if (!TryDeliverBoba(eventData))
+        if (hit.collider != null && hit.collider.gameObject == gameObject)
         {
-            rectTransform.position = originalPosition;  // Reset position if not delivered
+            isDragging = true;
+            offset = transform.position - GetMouseWorldPosition();
         }
     }
 
-    private bool TryDeliverBoba(PointerEventData eventData)
+    private void DragObject()
     {
-        GameObject target = eventData.pointerCurrentRaycast.gameObject;
-        if (target != null && target.CompareTag("Customer"))
-        {
-            if (target.GetComponent<Customer>().CompareToDesiredDrink(bobaTea))
-            {
-                Debug.Log("Boba delivered to the customer!");
-                Destroy(gameObject); // Remove the Boba after delivery
-                return true;
-            }
-        }
-        return false;
+        transform.position = GetMouseWorldPosition() + offset;
+    }
+
+    private Vector3 GetMouseWorldPosition()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = Camera.main.WorldToScreenPoint(transform.position).z;
+        return Camera.main.ScreenToWorldPoint(mousePos);
     }
 }
