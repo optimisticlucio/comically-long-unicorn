@@ -6,19 +6,16 @@ public class BobaTea
 {
     Liquid m_Liquid = Liquid.None;
     Tapioca m_Tapioca = Tapioca.None;
-    List<Topping> m_Toppings = new List<Topping>();
-    Foam m_Foam = Foam.None;
-
+    HashSet<Topping> m_Toppings = new HashSet<Topping>();
     bool m_Lidded = false;
 
-    public BobaTea(Liquid liquid, Tapioca tapioca, List<Topping> toppings, Foam foam) : this() {
+    public BobaTea(Liquid liquid, Tapioca tapioca, HashSet<Topping> toppings) : this() {
         m_Liquid = liquid;
         m_Tapioca = tapioca;
         m_Toppings = toppings;
-        m_Foam = foam;
     }
 
-    public BobaTea(Liquid liquid, Tapioca tapioca, Topping topping, Foam foam) : this(liquid, tapioca, new List<Topping>(), foam) {
+    public BobaTea(Liquid liquid, Tapioca tapioca, Topping topping) : this(liquid, tapioca, new HashSet<Topping>()) {
         m_Toppings.Add(topping);
     }
 
@@ -33,12 +30,6 @@ public class BobaTea
     public void SetTapioca(BobaTea.Tapioca i_Tapioca) {
         if (!m_Lidded){
             m_Tapioca = i_Tapioca;
-        }
-    }
-
-    public void SetFoam(BobaTea.Foam i_Foam) {
-        if (!m_Lidded){
-            m_Foam = i_Foam;
         }
     }
 
@@ -57,7 +48,7 @@ public class BobaTea
         BobaTea otherTea = obj as BobaTea;
         if (otherTea is null) return false;
 
-        return (otherTea.m_Liquid == m_Liquid) && (otherTea.m_Tapioca == m_Tapioca) && otherTea.m_Toppings.SequenceEqual(m_Toppings) && (otherTea.m_Foam == m_Foam) && (otherTea.m_Lidded == m_Lidded);
+        return (otherTea.m_Liquid == m_Liquid) && (otherTea.m_Tapioca == m_Tapioca) && otherTea.m_Toppings.SequenceEqual(m_Toppings) && (otherTea.m_Lidded == m_Lidded);
     }
     
 
@@ -83,10 +74,7 @@ public class BobaTea
     }
 
     public enum Topping {
-        None
-    }
-
-    public enum Foam {
-        None
+        None,
+        Foam
     }
 }

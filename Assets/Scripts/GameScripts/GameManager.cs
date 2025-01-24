@@ -72,7 +72,6 @@ public class GameManager : MonoBehaviour
         int m_DrinksToNextComplexity = 1; // Amount of drinks left until complexity increases.
         List<BobaTea.Liquid> m_AvailableLiquids;
         List<BobaTea.Tapioca> m_AvailableTapiocas;
-        List<BobaTea.Foam> m_AvailableFoams;
         List<BobaTea.Topping> m_AvailableToppings;
 
         public CustomerGenerator() {
@@ -82,8 +81,7 @@ public class GameManager : MonoBehaviour
 
             m_AvailableTapiocas.Add(BobaTea.Tapioca.Classic);
 
-            // No foams or toppings to start
-            m_AvailableFoams.Add(BobaTea.Foam.None);
+            // No toppings to start
             m_AvailableToppings.Add(BobaTea.Topping.None);
         }
 
@@ -126,10 +124,9 @@ public class GameManager : MonoBehaviour
             // Grabs random available items and tosses into a drink.
             BobaTea.Liquid randLiquid = GetRandomFromList(m_AvailableLiquids);
             BobaTea.Tapioca randTapioca = GetRandomFromList(m_AvailableTapiocas);
-            BobaTea.Foam randFoam = GetRandomFromList(m_AvailableFoams);
             BobaTea.Topping randTopping = GetRandomFromList(m_AvailableToppings); // NOTE - Assumes only one topping.
 
-            return new BobaTea(randLiquid, randTapioca, randTopping, randFoam);
+            return new BobaTea(randLiquid, randTapioca, randTopping);
         }
 
         private T GetRandomFromList<T>(List<T> list) {
