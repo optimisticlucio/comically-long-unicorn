@@ -12,9 +12,10 @@ public class Customer : MonoBehaviour
 
 
 
-    public Customer(BobaTea drink)
+    public Customer(BobaTea drink, Sprite sprite)
     {
         m_DesiredDrink = drink;
+        m_customerSprite.sprite = sprite;
     }
     private Customer() { } // Default constructor. Do not call without adding drink!!!
 
