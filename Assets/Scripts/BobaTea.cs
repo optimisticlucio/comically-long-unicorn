@@ -14,22 +14,22 @@ public class BobaTea
         m_Foam = foam;
     }
 
-    enum Liquid {
+    public enum Liquid {
         None,
         Tea,
         Water
     }
 
-    enum Tapioca {
+    public enum Tapioca {
         None,
         Bubbles
     }
 
-    enum Topping {
+    public enum Topping {
         None
     }
 
-    enum Foam {
+    public enum Foam {
         None
     }
 }
