@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class BeverageMachineBtn : MonoBehaviour
 {
-    [SerializeField] Button button;
+    [SerializeField] GameObject button;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
