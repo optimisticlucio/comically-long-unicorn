@@ -22,6 +22,22 @@ public class BobaTea
 
     public BobaTea() {} // BASE CONSTRUCTOR! Insert code HERE, not above!
 
+    public void SetLiquid(BobaTea.Liquid i_Liquid) {
+        m_Liquid = i_Liquid;
+    }
+
+    public void SetTapioca(BobaTea.Tapioca i_Tapioca) {
+        m_Tapioca = i_Tapioca;
+    }
+
+    public void SetFoam(BobaTea.Foam i_Foam) {
+        m_Foam = i_Foam;
+    }
+
+    public void AddTopping(BobaTea.Topping i_Topping) {
+        m_Toppings.Add(i_Topping);
+    }
+
     public override bool Equals(object obj)
     {
         BobaTea otherTea = obj as BobaTea;
