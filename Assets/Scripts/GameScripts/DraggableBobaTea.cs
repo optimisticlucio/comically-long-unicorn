@@ -6,7 +6,7 @@ public class DraggableBobaTea : MonoBehaviour
     private Vector3 offset;
     private bool isDraggable = true;
 
-    public BobaTea m_BobaTea;
+    public BobaTea m_BobaTea = new BobaTea();
 
     [SerializeField] SpriteRenderer m_LiquidSprite;
 
