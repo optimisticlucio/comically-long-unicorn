@@ -45,6 +45,11 @@ public class DraggableBobaTea : MonoBehaviour
         transform.position = GetMouseWorldPosition() + offset;
     }
 
+    public void UpdateVisuals() {
+        Sprite appropriateDrinkSprite = m_BobaTea.Liquid.GetSprite();
+        // TODO - Actually update.
+    }
+
     private Vector3 GetMouseWorldPosition()
     {
         Vector3 mousePos = Input.mousePosition;

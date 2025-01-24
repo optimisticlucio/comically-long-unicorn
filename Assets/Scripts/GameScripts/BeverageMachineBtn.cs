@@ -4,6 +4,10 @@ using UnityEngine.UI;
 public class BeverageMachineBtn : MonoBehaviour
 {
     [SerializeField] GameObject button;
+    [SerializeField] BobaTea.Liquid m_DispensedLiquid = BobaTea.Liquid.None;
+
+    public BeverageMachine m_ParentBeverageMachine;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,7 +18,8 @@ public class BeverageMachineBtn : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && CheckMouseDown())
         {
-            print("Mouse Clicked on Btn");
+            print("Mouse Clicked on Beverage Machine Btn");
+            m_ParentBeverageMachine.AddLiquidToCup(m_DispensedLiquid);
         }
     }
 

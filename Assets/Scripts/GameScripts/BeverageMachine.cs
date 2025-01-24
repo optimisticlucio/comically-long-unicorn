@@ -11,7 +11,9 @@ public class BeverageMachine : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        foreach (BeverageMachineBtn button in m_Buttons) {
+            button.m_ParentBeverageMachine = this;
+        }
     }
 
     // Update is called once per frame
@@ -23,14 +25,14 @@ public class BeverageMachine : MonoBehaviour
     public void AddLiquidToCup(BobaTea.Liquid i_InsertedLiquid) {
         if (m_LiquidArea.m_HeldCup != null) {
             m_LiquidArea.m_HeldCup.m_BobaTea.SetLiquid(i_InsertedLiquid);
-            // TODO - Update cup visuals.
+            m_LiquidArea.m_HeldCup.UpdateVisuals();
         }
     }
 
     public void AddTapiocaToCup(BobaTea.Tapioca i_InsertedTapioca) {
         if (m_FoamAndToppingArea.m_HeldCup != null) {
             m_FoamAndToppingArea.m_HeldCup.m_BobaTea.SetTapioca(i_InsertedTapioca);
-            // TODO - Update cup visuals.
+            m_LiquidArea.m_HeldCup.UpdateVisuals();
         }
     }
 

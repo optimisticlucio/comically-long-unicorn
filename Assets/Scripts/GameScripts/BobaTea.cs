@@ -6,10 +6,10 @@ using NUnit.Framework.Constraints;
 
 public class BobaTea
 {
-    Liquid m_Liquid = Liquid.None;
-    Tapioca m_Tapioca = Tapioca.None;
-    HashSet<Topping> m_Toppings = new HashSet<Topping>();
-    bool m_Lidded = false;
+    public Liquid m_Liquid = Liquid.None;
+    public Tapioca m_Tapioca = Tapioca.None;
+    public HashSet<Topping> m_Toppings = new HashSet<Topping>();
+    public bool m_Lidded = false;
 
     public BobaTea(Liquid liquid, Tapioca tapioca, HashSet<Topping> toppings) : this() {
         m_Liquid = liquid;
