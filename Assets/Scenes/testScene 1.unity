@@ -523,6 +523,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 631104770629379345, guid: 82307b72bb78c364393e9f5e32483af9, type: 3}
+      propertyPath: m_timeToReleaseCup
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4850593634429712718, guid: 82307b72bb78c364393e9f5e32483af9, type: 3}
       propertyPath: m_LiquidArea
       value: 

@@ -86,4 +86,14 @@ public class DraggableBobaTea : MonoBehaviour
     {
         isDraggable = draggable;
     }
+
+    public void SetIsDragging(bool dragging)
+    {
+        isDragging = dragging;
+    }
+
+    public bool GetDraggable()
+    {
+        return isDraggable;
+    }
 }
