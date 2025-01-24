@@ -54,6 +54,7 @@ public class DraggableBobaTea : MonoBehaviour
     public void UpdateVisuals() {
         if (m_LiquidSprite != null) {
             m_LiquidSprite.sprite = m_BobaTea.m_Liquid.GetSprite();
+            print("Updated liquid sprite! " + m_BobaTea.m_Liquid.GetSprite().name);
         }
         else {
             Debug.LogError("Missing Liquid Sprite in cup!");
