@@ -13,22 +13,7 @@ public class BeverageMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Check for mouse click 
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit raycastHit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out raycastHit, 100f))
-            {
-                if (raycastHit.transform != null)
-                {
 
-                    foreach (BeverageMachineBtn button in buttons)
-                    {
-                        button.CurrentClickedGameObject(raycastHit.transform.gameObject);
-                    }
-                }
-            }
-        }
     }
+
 }
