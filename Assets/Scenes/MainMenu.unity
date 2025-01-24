@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e9da3b46bab4524a892dceeab7ddb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newGameLevel: TestScene
+  newGameLevel: TestScene 1
 --- !u!1 &1271707857
 GameObject:
   m_ObjectHideFlags: 0

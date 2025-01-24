@@ -1,21 +1,23 @@
 using UnityEngine;
 
-public class DraggableBoba : MonoBehaviour
+public class DraggableBobaTea : MonoBehaviour
 {
     private bool isDragging = false;
     private Vector3 offset;
+    private bool isDraggable = true;
 
     public BobaTea m_BobaTea;
 
     void Update()
     {
+        if (!isDraggable) return;
+
         if (Input.GetMouseButtonDown(0))
         {
-            print("Mouse Clicked");
             CheckMouseDown();
         }
 
-        if (isDragging)
+        if (isDragging && Input.GetMouseButton(0))
         {
             DragObject();
         }
@@ -48,5 +50,10 @@ public class DraggableBoba : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Camera.main.WorldToScreenPoint(transform.position).z;
         return Camera.main.ScreenToWorldPoint(mousePos);
+    }
+
+    public void SetDraggable(bool draggable)
+    {
+        isDraggable = draggable;
     }
 }

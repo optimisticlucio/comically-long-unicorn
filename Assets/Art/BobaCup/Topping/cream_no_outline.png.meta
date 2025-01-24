@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cream_no_outline_0: -3326840201854256436
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

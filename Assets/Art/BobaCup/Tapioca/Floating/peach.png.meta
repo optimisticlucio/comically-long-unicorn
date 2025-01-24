@@ -484,7 +484,22 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      peach_0: -5197687505146949456
+      peach_1: 3214253576194895826
+      peach_10: -4622574836845342351
+      peach_11: 4028040138494395903
+      peach_12: 5859567019109474496
+      peach_13: 1922064219932646357
+      peach_14: -5157122467102576135
+      peach_2: 2546889855011589430
+      peach_3: 657373989204679016
+      peach_4: -8528857193932627543
+      peach_5: 5628177290523126669
+      peach_6: -3456546299159991926
+      peach_7: -8538313512388101124
+      peach_8: -6021147785247728027
+      peach_9: 4412295058318228429
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5866362906853888}
   - component: {fileID: 8027594931026941894}
   - component: {fileID: 8375611069778375859}
-  m_Layer: 0
+  - component: {fileID: 7675862388254966008}
+  m_Layer: 3
   m_Name: Cup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +102,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51dcad0bf967df34291c4d21dd5bb9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bobaTea: {fileID: 0}
+--- !u!61 &7675862388254966008
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3123596524610525959}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.43291152}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1.865823}
+  m_EdgeRadius: 0
 --- !u!1 &5264760201486367994
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2385660789438060408}
   - component: {fileID: 7902902982456419207}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
