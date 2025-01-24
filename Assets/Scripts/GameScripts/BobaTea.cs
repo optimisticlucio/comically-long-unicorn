@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Mono.Cecil;
 using NUnit.Framework.Constraints;
+using UnityEngine.InputSystem.Interactions;
 
 public class BobaTea
 {
@@ -97,6 +98,13 @@ public static class EnumExtensions {
                 break;
         }
 
+        Debug.Log("Grabbing the following sprite: " + spriteResource);
+        if (Resources.Load(spriteResource) != null) {
+            Debug.Log("Grabbed it successfully!");
+        }
+        else {
+            Debug.Log("It's null :(");
+        }
         return Resources.Load(spriteResource) as Sprite;
     }
 
