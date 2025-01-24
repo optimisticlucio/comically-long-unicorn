@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class CupHolder : MonoBehaviour
 {
-    [SerializeField] BobaTea m_HeldCup;
+    [SerializeField] public BobaTea m_HeldCup;
 }

@@ -9,6 +9,8 @@ public class BobaTea
     List<Topping> m_Toppings = new List<Topping>();
     Foam m_Foam = Foam.None;
 
+    bool m_Lidded = false;
+
     public BobaTea(Liquid liquid, Tapioca tapioca, List<Topping> toppings, Foam foam) : this() {
         m_Liquid = liquid;
         m_Tapioca = tapioca;
