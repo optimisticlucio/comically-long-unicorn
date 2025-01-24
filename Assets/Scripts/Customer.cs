@@ -17,4 +17,12 @@ public class Customer : MonoBehaviour
     {
         
     }
+
+    public bool CompareToDesiredDrink(BobaTea givenDrink) {
+        return givenDrink.Equals(m_DesiredDrink);
+    }
+
+    public bool isAnnoyed() {
+        return m_TimeWaiting >= m_TimeToAnnoyed;
+    }
 }
