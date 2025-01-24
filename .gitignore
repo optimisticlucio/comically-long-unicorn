@@ -70,6 +70,10 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+<<<<<<< HEAD
 
 # Added by myself
 .vsconfig
+=======
+.vscode/
+>>>>>>> 17a4b1e (simplfiy code for beverageMachine and beverageMachinebuttons)
