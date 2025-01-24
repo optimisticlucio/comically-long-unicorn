@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using Mono.Cecil;
+using NUnit.Framework.Constraints;
 
 public class BobaTea
 {
@@ -62,7 +64,6 @@ public class BobaTea
         Matcha,
         Water
     }
-
     public enum Tapioca {
         None,
         Classic,
@@ -77,4 +78,80 @@ public class BobaTea
         None,
         Foam
     }
+}
+
+public static class EnumExtensions {
+    public static Sprite GetSprite(this BobaTea.Liquid self) {
+        string spriteResource = "Art/BobaCup/Liquid/";
+
+        switch (self) {
+            case BobaTea.Liquid.GreenTea:
+                spriteResource += "green";
+                break;
+            case BobaTea.Liquid.BlackTea:
+                spriteResource += "black";
+                break;
+            default:
+                Debug.LogError("Attempted to get sprite of liquid with no assigned sprite. Returned null.");
+                spriteResource = "";
+                break;
+        }
+
+        return Resources.Load(spriteResource) as Sprite;
+    }
+
+    public static Sprite GetSpriteFloating(this BobaTea.Tapioca self) {
+        string spriteResource = "Art/BobaCup/Tapioca/Floating/";
+
+        switch (self) {
+            case BobaTea.Tapioca.Classic:
+                spriteResource += "classic";
+                break;
+            case BobaTea.Tapioca.Matcha:
+                spriteResource += "matcha";
+                break;
+            default:
+                Debug.LogError("Attempted to get floating sprite of tapioca with no assigned sprite. Returned null.");
+                spriteResource = "";
+                break;
+        }
+
+        return Resources.Load(spriteResource) as Sprite;
+    }
+
+    public static Sprite GetSpritePickup(this BobaTea.Tapioca self) {
+        string spriteResource = "Art/BobaCup/Tapioca/Pickup/";
+
+        switch (self) {
+            case BobaTea.Tapioca.Classic:
+                spriteResource += "classic";
+                break;
+            case BobaTea.Tapioca.Matcha:
+                spriteResource += "matcha";
+                break;
+            default:
+                Debug.LogError("Attempted to get pickup sprite of tapioca with no assigned sprite. Returned null.");
+                spriteResource = "";
+                break;
+        }
+
+        return Resources.Load(spriteResource) as Sprite;
+    }
+
+    public static Sprite GetSprite(this BobaTea.Topping self) {
+        string spriteResource = "Art/BobaCup/Topping/";
+
+        switch (self) {
+            case BobaTea.Topping.Foam:
+                spriteResource += "cream_outline";
+                break;
+            default:
+                Debug.LogError("Attempted to get sprite of liquid with no assigned sprite. Returned null.");
+                spriteResource = "";
+                break;
+        }
+
+        return Resources.Load(spriteResource) as Sprite;
+    }
+
 }
