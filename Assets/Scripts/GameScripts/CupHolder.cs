@@ -3,7 +3,7 @@ using UnityEngine.PlayerLoop;
 
 public class CupHolder : MonoBehaviour
 {
-    [SerializeField] public DraggabelBobaTea m_HeldCup;
+    [SerializeField] public DraggableBoba m_HeldCup;
     
     void Update()
     {
