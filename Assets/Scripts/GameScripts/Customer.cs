@@ -3,13 +3,9 @@ using UnityEngine;
 
 public class Customer
 {
-    BobaTea m_DesiredDrink;
+    public BobaTea m_DesiredDrink;
     float m_TimeWaiting = 0;
     [SerializeField] float m_TimeToAnnoyed = 20f; // The amount of time until the customer leaves.
-
-
-
-
 
     public Customer(BobaTea drink)
     {

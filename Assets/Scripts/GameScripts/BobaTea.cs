@@ -1,9 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
-using Mono.Cecil;
-using NUnit.Framework.Constraints;
-using UnityEngine.InputSystem.Interactions;
 
 public class BobaTea
 {
@@ -63,7 +60,9 @@ public class BobaTea
         BlackTea,
         Strawberry,
         Matcha,
-        Water
+        Banana,
+        Blueberry,
+        Peach
     }
     public enum Tapioca {
         None,
@@ -92,6 +91,21 @@ public static class EnumExtensions {
             case BobaTea.Liquid.BlackTea:
                 spriteResource += "black";
                 break;
+            case BobaTea.Liquid.Matcha:
+                spriteResource += "green";
+                break;
+            case BobaTea.Liquid.Strawberry:
+                spriteResource += "pink";
+                break;
+            case BobaTea.Liquid.Peach:
+                spriteResource += "peach";
+                break;
+            case BobaTea.Liquid.Banana:
+                spriteResource += "yellow";
+                break;
+            case BobaTea.Liquid.Blueberry:
+                spriteResource += "purple";
+                break;
             default:
                 Debug.LogError("Attempted to get sprite of liquid with no assigned sprite. Returned null.");
                 spriteResource = "";
@@ -111,6 +125,15 @@ public static class EnumExtensions {
             case BobaTea.Tapioca.Matcha:
                 spriteResource += "matcha";
                 break;
+            case BobaTea.Tapioca.Coffee:
+                spriteResource += "coffee";
+                break;
+            case BobaTea.Tapioca.Pineapple:
+                spriteResource += "yellow";
+                break;
+            case BobaTea.Tapioca.Strawberry:
+                spriteResource += "strawberry";
+                break;
             default:
                 Debug.LogError("Attempted to get floating sprite of tapioca with no assigned sprite. Returned null.");
                 spriteResource = "";
@@ -129,6 +152,15 @@ public static class EnumExtensions {
                 break;
             case BobaTea.Tapioca.Matcha:
                 spriteResource += "matcha";
+                break;
+                        case BobaTea.Tapioca.Coffee:
+                spriteResource += "coffee";
+                break;
+            case BobaTea.Tapioca.Pineapple:
+                spriteResource += "yellow";
+                break;
+            case BobaTea.Tapioca.Strawberry:
+                spriteResource += "strawberry";
                 break;
             default:
                 Debug.LogError("Attempted to get pickup sprite of tapioca with no assigned sprite. Returned null.");

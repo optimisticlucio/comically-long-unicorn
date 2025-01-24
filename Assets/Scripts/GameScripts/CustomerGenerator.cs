@@ -85,6 +85,7 @@ public class CustomerGenerator : MonoBehaviour
         if (customerHolder != null)
         {
             customerHolder.Initialize(newCustomer, randomSprite);
+            print("Generated new customer who wants " + newCustomer.m_DesiredDrink.m_Liquid + " tea with " + newCustomer.m_DesiredDrink.m_Tapioca + " tapioca.");
         }
 
         return customerHolder;
