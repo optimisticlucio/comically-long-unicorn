@@ -12,10 +12,23 @@ public class BeverageMachineBtn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && CheckMouseDown())
         {
-            print("Mouse Clicked");
+            print("Mouse Clicked on Btn");
         }
+    }
+
+        private bool CheckMouseDown()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.GetRayIntersection(ray);
+
+        if (hit.collider != null && hit.collider.gameObject == gameObject)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     
