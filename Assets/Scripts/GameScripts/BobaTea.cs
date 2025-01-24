@@ -98,14 +98,7 @@ public static class EnumExtensions {
                 break;
         }
 
-        Debug.Log("Grabbing the following sprite: " + spriteResource);
-        if (Resources.Load(spriteResource) != null) {
-            Debug.Log("Grabbed it successfully!");
-        }
-        else {
-            Debug.Log("It's null :(");
-        }
-        return Resources.Load(spriteResource) as Sprite;
+        return Resources.Load<Sprite>(spriteResource);
     }
 
     public static Sprite GetSpriteFloating(this BobaTea.Tapioca self) {
@@ -124,7 +117,7 @@ public static class EnumExtensions {
                 break;
         }
 
-        return Resources.Load(spriteResource) as Sprite;
+        return Resources.Load<Sprite>(spriteResource);
     }
 
     public static Sprite GetSpritePickup(this BobaTea.Tapioca self) {
@@ -143,7 +136,7 @@ public static class EnumExtensions {
                 break;
         }
 
-        return Resources.Load(spriteResource) as Sprite;
+        return Resources.Load<Sprite>(spriteResource);
     }
 
     public static Sprite GetSprite(this BobaTea.Topping self) {
@@ -159,7 +152,7 @@ public static class EnumExtensions {
                 break;
         }
 
-        return Resources.Load(spriteResource) as Sprite;
+        return Resources.Load<Sprite>(spriteResource);
     }
 
 }
