@@ -9,12 +9,12 @@ public class GameManager : MonoBehaviour
 
     float m_TimeToNextCustomer = 5f;
 
-    CustomerGenerator m_CustomerGenerator = new CustomerGenerator();
+    [SerializeField] CustomerGenerator m_CustomerGenerator = new CustomerGenerator();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -22,31 +22,39 @@ public class GameManager : MonoBehaviour
     {
         UpdateDaytime();
 
-        if (m_DayTimeLeft >= 0) {
+        if (m_DayTimeLeft >= 0)
+        {
             WaitForNextCustomer();
 
-            foreach (Customer customer in m_WaitingCustomers) {
-                if (customer.isAnnoyed()) {
+            foreach (Customer customer in m_WaitingCustomers)
+            {
+                if (customer.isAnnoyed())
+                {
                     // TODO - Make customer leave!
                 }
             }
-        } 
+        }
     }
 
-    void UpdateDaytime() {
+    void UpdateDaytime()
+    {
         m_DayTimeLeft -= Time.deltaTime;
 
         // TODO - Check if day is over?
     }
 
-    void WaitForNextCustomer() {
+    void WaitForNextCustomer()
+    {
         m_TimeToNextCustomer -= Time.deltaTime;
 
-        if (m_TimeToNextCustomer <= 0) {
-            if (m_WaitingCustomers.Count >= m_MaxCustomersAtOnce) {
+        if (m_TimeToNextCustomer <= 0)
+        {
+            if (m_WaitingCustomers.Count >= m_MaxCustomersAtOnce)
+            {
                 m_TimeToNextCustomer = 2f; // Wait two seconds before checking again.
             }
-            else {
+            else
+            {
                 // Send in a new customer!
                 Customer newCustomer = new Customer(m_CustomerGenerator.GenerateRandomDrink());
                 // TODO - PUT CUSTOMER IN SCENE
@@ -54,27 +62,35 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    bool GiveCustomerDrink(int i_CustomerNumber, BobaTea i_GivenDrink) { // Returns true if correct drink.
-        if (m_WaitingCustomers[i_CustomerNumber].CompareToDesiredDrink(i_GivenDrink)) {
+    bool GiveCustomerDrink(int i_CustomerNumber, BobaTea i_GivenDrink)
+    { // Returns true if correct drink.
+        if (m_WaitingCustomers[i_CustomerNumber].CompareToDesiredDrink(i_GivenDrink))
+        {
             // TODO - Animation of customer happy and leaving!
             m_CustomerGenerator.DrinkSuccessfulyServed();
             return true;
         }
-        else {
+        else
+        {
             // TODO - Give user indication of what's wrong! Noise, animation, whatever
             return false;
         }
     }
 
 
-    class CustomerGenerator {
+    class CustomerGenerator
+    {
         int m_CustomerRequestComplexity = 0; // Advances as requests get more complicated.
         int m_DrinksToNextComplexity = 1; // Amount of drinks left until complexity increases.
         List<BobaTea.Liquid> m_AvailableLiquids;
         List<BobaTea.Tapioca> m_AvailableTapiocas;
         List<BobaTea.Topping> m_AvailableToppings;
 
-        public CustomerGenerator() {
+        [SerializeField] List<SpriteRenderer> CustomerspriteRenderers;
+
+
+        public CustomerGenerator()
+        {
             // BASIC INGREDIENTS!
 
             m_AvailableLiquids.Add(BobaTea.Liquid.BlackTea);
@@ -83,25 +99,32 @@ public class GameManager : MonoBehaviour
 
             // No toppings to start
             m_AvailableToppings.Add(BobaTea.Topping.None);
+
+
+
         }
 
-        public void DrinkSuccessfulyServed() {
+        public void DrinkSuccessfulyServed()
+        {
             m_DrinksToNextComplexity--;
 
-            if (m_DrinksToNextComplexity == 0) {
+            if (m_DrinksToNextComplexity == 0)
+            {
                 AdvanceComplexityLevel();
             }
         }
 
-        public void AdvanceComplexityLevel() {
+        public void AdvanceComplexityLevel()
+        {
             m_CustomerRequestComplexity++;
 
-            switch (m_CustomerRequestComplexity) {
+            switch (m_CustomerRequestComplexity)
+            {
                 case 1:
                     m_AvailableTapiocas.Add(BobaTea.Tapioca.None);
                     m_DrinksToNextComplexity = 2;
                     break;
-            
+
                 case 2:
                     m_AvailableLiquids.Add(BobaTea.Liquid.GreenTea);
                     m_DrinksToNextComplexity = 3;
@@ -120,7 +143,8 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        public BobaTea GenerateRandomDrink() {
+        public BobaTea GenerateRandomDrink()
+        {
             // Grabs random available items and tosses into a drink.
             BobaTea.Liquid randLiquid = GetRandomFromList(m_AvailableLiquids);
             BobaTea.Tapioca randTapioca = GetRandomFromList(m_AvailableTapiocas);
@@ -129,7 +153,8 @@ public class GameManager : MonoBehaviour
             return new BobaTea(randLiquid, randTapioca, randTopping);
         }
 
-        private T GetRandomFromList<T>(List<T> list) {
+        private T GetRandomFromList<T>(List<T> list)
+        {
             return list[Random.Range(0, list.Count)];
         }
     }
