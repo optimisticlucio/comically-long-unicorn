@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51dcad0bf967df34291c4d21dd5bb9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LiquidSprite: {fileID: 0}
+  m_LiquidSprite: {fileID: 9210839587732462725}
   m_TapiocaSprite: {fileID: 0}
   m_LidSprite: {fileID: 0}
 --- !u!1 &5020778851796251703
