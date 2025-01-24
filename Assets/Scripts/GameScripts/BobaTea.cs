@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
-public class BobaTea : MonoBehaviour
+public class BobaTea
 {
     Liquid m_Liquid = Liquid.None;
     Tapioca m_Tapioca = Tapioca.None;

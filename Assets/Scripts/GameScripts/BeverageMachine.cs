@@ -22,14 +22,14 @@ public class BeverageMachine : MonoBehaviour
 
     public void AddLiquidToCup(BobaTea.Liquid i_InsertedLiquid) {
         if (m_LiquidArea.m_HeldCup != null) {
-            m_LiquidArea.m_HeldCup.SetLiquid(i_InsertedLiquid);
+            m_LiquidArea.m_HeldCup.bobaTea.SetLiquid(i_InsertedLiquid);
             // TODO - Update cup visuals.
         }
     }
 
     public void AddTapiocaToCup(BobaTea.Tapioca i_InsertedTapioca) {
         if (m_FoamAndToppingArea.m_HeldCup != null) {
-            m_FoamAndToppingArea.m_HeldCup.SetTapioca(i_InsertedTapioca);
+            m_FoamAndToppingArea.m_HeldCup.bobaTea.SetTapioca(i_InsertedTapioca);
             // TODO - Update cup visuals.
         }
     }
