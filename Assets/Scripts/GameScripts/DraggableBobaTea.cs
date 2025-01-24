@@ -8,7 +8,7 @@ public class DraggableBobaTea : MonoBehaviour
 
     public BobaTea m_BobaTea;
 
-    [SerializeField] Sprite m_LiquidSprite;
+    [SerializeField] SpriteRenderer m_LiquidSprite;
 
     [SerializeField] Sprite m_TapiocaSprite;
 
