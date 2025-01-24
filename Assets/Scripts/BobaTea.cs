@@ -9,11 +9,15 @@ public class BobaTea
     List<Topping> m_Toppings = new List<Topping>();
     Foam m_Foam = Foam.None;
 
-    public BobaTea(Liquid liquid, Tapioca tapioca, List<Topping> toppings, Foam foam) : base() {
+    public BobaTea(Liquid liquid, Tapioca tapioca, List<Topping> toppings, Foam foam) : this() {
         m_Liquid = liquid;
         m_Tapioca = tapioca;
         m_Toppings = toppings;
         m_Foam = foam;
+    }
+
+    public BobaTea(Liquid liquid, Tapioca tapioca, Topping topping, Foam foam) : this(liquid, tapioca, new List<Topping>(), foam) {
+        m_Toppings.Add(topping);
     }
 
     public BobaTea() {} // BASE CONSTRUCTOR! Insert code HERE, not above!
@@ -33,12 +37,19 @@ public class BobaTea
         None,
         GreenTea,
         BlackTea,
+        Strawberry,
+        Matcha,
         Water
     }
 
     public enum Tapioca {
         None,
-        Bubbles
+        Classic,
+        Pineapple,
+        Peach,
+        Matcha,
+        Strawberry,
+        Coffee
     }
 
     public enum Topping {
