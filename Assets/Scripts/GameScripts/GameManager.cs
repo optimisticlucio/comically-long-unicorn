@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 // Send in a new customer!
-                Customer newCustomer = new Customer(m_CustomerGenerator.GenerateRandomDrink());
+                Customer newCustomer = new Customer(m_CustomerGenerator.GenerateRandomDrink(), m_CustomerGenerator.GetRandomFromList(m_CustomerGenerator.CustomerspriteRenderers));
                 // TODO - PUT CUSTOMER IN SCENE
             }
         }
@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
         List<BobaTea.Tapioca> m_AvailableTapiocas;
         List<BobaTea.Topping> m_AvailableToppings;
 
-        [SerializeField] List<SpriteRenderer> CustomerspriteRenderers;
+        [SerializeField] public List<Sprite> CustomerspriteRenderers;
 
 
         public CustomerGenerator()
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
             return new BobaTea(randLiquid, randTapioca, randTopping);
         }
 
-        private T GetRandomFromList<T>(List<T> list)
+        public T GetRandomFromList<T>(List<T> list)
         {
             return list[Random.Range(0, list.Count)];
         }
