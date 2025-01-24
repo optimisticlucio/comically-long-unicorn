@@ -10,9 +10,9 @@ public class DraggableBobaTea : MonoBehaviour
 
     [SerializeField] SpriteRenderer m_LiquidSprite;
 
-    [SerializeField] Sprite m_TapiocaSprite;
+    [SerializeField] SpriteRenderer m_TapiocaSprite;
 
-    [SerializeField] Sprite m_LidSprite;
+    [SerializeField] SpriteRenderer m_LidSprite;
 
     void Update()
     {
@@ -52,8 +52,26 @@ public class DraggableBobaTea : MonoBehaviour
     }
 
     public void UpdateVisuals() {
-        Sprite appropriateDrinkSprite = m_BobaTea.m_Liquid.GetSprite();
-        // TODO - Actually update.
+        if (m_LiquidSprite != null) {
+            m_LiquidSprite.sprite = m_BobaTea.m_Liquid.GetSprite();
+        }
+        else {
+            Debug.LogError("Missing Liquid Sprite in cup!");
+        }
+
+        if (m_TapiocaSprite != null) {
+            m_TapiocaSprite.sprite = m_BobaTea.m_Tapioca.GetSpriteFloating();
+        }
+        else {
+            Debug.LogError("Missing Tapioca Sprite in cup!");
+        }
+
+        if (m_LidSprite != null) {
+            m_LidSprite.enabled = m_BobaTea.m_Lidded;
+        }
+        else {
+            Debug.LogError("Missing Lid Sprite in cup!");
+        }
     }
 
     private Vector3 GetMouseWorldPosition()
