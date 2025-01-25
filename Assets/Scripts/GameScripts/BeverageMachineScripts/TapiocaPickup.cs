@@ -16,18 +16,19 @@ public class TapiocaPickup : MonoBehaviour
     void Start()
     {
         m_SpriteRenderer = button.GetComponent<SpriteRenderer>();
+        m_unpressedSprite = m_DispensedTapioca.GetSpritePickup();
         m_SpriteRenderer.sprite = m_unpressedSprite;
         if (m_pressedSprite == null) {
             m_pressedSprite = m_unpressedSprite;
         }
 
         // Get the AudioSource component from the GameObject
-        audioSource = GetComponent<AudioSource>();
+        /* audioSource = GetComponent<AudioSource>();
 
         if (audioSource == null)
         {
             Debug.LogError("AudioSource component not found. Please add an AudioSource to the GameObject.");
-        }
+        }*/
     }
 
     // Update is called once per frame
