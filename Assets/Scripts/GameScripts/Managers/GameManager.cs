@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] static int s_PriceOfDrink = 10;
 
-    float m_TimeToNextCustomer = 5f;
+    float m_TimeToNextCustomer = 5.0f;
 
     [SerializeField] CustomerGenerator m_CustomerGenerator;
 
@@ -94,10 +94,10 @@ public class GameManager : MonoBehaviour
     { // Returns true if correct drink.
         if (m_WaitingCustomers[i_CustomerNumber].m_Customer.CompareToDesiredDrink(i_GivenDrink))
         {
-            // TODO - Animation of customer happy and leaving!
             m_CustomerGenerator.DrinkSuccessfulyServed();
             m_EarnedMoney += s_PriceOfDrink;
             m_SpawnPointHasCustomer[m_WaitingCustomers[i_CustomerNumber].m_SpawnPointUsed] = false;
+            m_WaitingCustomers.RemoveAt(i_CustomerNumber);
             return true;
         }
         else

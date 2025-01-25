@@ -23,6 +23,7 @@ public class CustomerHolder : MonoBehaviour
     public int m_SpawnPointUsed = -1; // The Spawnpoint this customer is standing on.
 
     private bool isPlayingSound = false;  // Track if a sound is playing
+    private bool isHappy = false;
 
     void Start()
     {
@@ -53,6 +54,16 @@ public class CustomerHolder : MonoBehaviour
         }
     }
 
+    public void DestroyCustomer()
+    {
+        print("Trying to Destroy customer");
+        if (isHappy)
+        {
+            print("Customer is happy, adding score");
+            Destroy(gameObject);
+        }
+    }
+
     void checkForCup()
     {
         Collider2D cupCollider = Physics2D.OverlapCircle(transform.position, detectionRadius, layerMask);
@@ -67,6 +78,8 @@ public class CustomerHolder : MonoBehaviour
                     isPlayingSound = false;
                     PlayRandomHappySound();
                     print("Customer is happy!");
+                    //TODO: Add score
+                    isHappy = true;
                 }
                 else
                 {
@@ -102,7 +115,7 @@ public class CustomerHolder : MonoBehaviour
 
         m_CustomerSpriteRenderer.sprite = sprite;
         m_CustomerSpriteRenderer.sortingLayerID = SortingLayer.NameToID("Customer");
-        
+
         createBubbleForCup();
 
         PlaySound(enterSound);
@@ -140,14 +153,25 @@ public class CustomerHolder : MonoBehaviour
         if (audioSource != null && happySounds.Count > 0 && !audioSource.isPlaying)
         {
             int randomIndex = Random.Range(0, happySounds.Count);
-            PlaySound(happySounds[randomIndex]);
+            AudioClip selectedClip = happySounds[randomIndex];
+
+            PlaySound(selectedClip);
+
+            StartCoroutine(WaitForSoundToEnd(selectedClip.length));
         }
         else
         {
-            Debug.LogWarning("No audio clips assigned to CustomerHolder.");
+            Debug.LogWarning("No audio clips assigned to CustomerHolder or sound is already playing.");
         }
     }
 
+    private IEnumerator WaitForSoundToEnd(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        print("Happy sound finished playing!");
+        // You can trigger other actions here once the sound is done
+        DestroyCustomer();
+    }
     private IEnumerator ResetSoundFlag(float duration)
     {
         yield return new WaitForSeconds(duration);
