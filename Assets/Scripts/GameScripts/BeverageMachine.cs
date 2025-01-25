@@ -73,4 +73,15 @@ public class BeverageMachine : MonoBehaviour
         return false;
     }
 
+    public bool PutLidOnCup() 
+    {
+        if (m_LidArea.m_HeldCup != null)
+        {
+            m_FoamAndToppingArea.m_HeldCup.m_BobaTea.AddLid();
+            m_LiquidArea.m_HeldCup.UpdateVisuals();
+            return true;
+        }
+        return false;
+    }
+
 }

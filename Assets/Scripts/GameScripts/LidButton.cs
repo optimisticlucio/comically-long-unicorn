@@ -1,10 +1,8 @@
 using UnityEngine;
 
-public class ToppingButton : MonoBehaviour
+public class LidButton : MonoBehaviour
 {
     [SerializeField] GameObject button;
-    [SerializeField] BobaTea.Topping m_DispensedTopping = BobaTea.Topping.None;
-
     [SerializeField] Sprite m_pressedSprite;
     [SerializeField] Sprite m_unpressedSprite;
     [SerializeField] private AudioClip clickSound;  // Drag audio clip here
@@ -51,15 +49,15 @@ public class ToppingButton : MonoBehaviour
 
     void OnMouseDown()
     {
-        print("Mouse Down on Topping Button for " + m_DispensedTopping);
+        print("Mouse Down on Lidding Button");
         m_SpriteRenderer.sprite = m_pressedSprite;
         // Play click sound
         if (audioSource != null && clickSound != null)
         {
             audioSource.PlayOneShot(clickSound);
         }
-        print("Mouse Clicked on Topping Button for " + m_DispensedTopping);
-        m_ParentBeverageMachine.AddToppingToCup(m_DispensedTopping);
+        print("Mouse Clicked on Lidding Button");
+        m_ParentBeverageMachine.PutLidOnCup();
     }
 
     void OnMouseUp()

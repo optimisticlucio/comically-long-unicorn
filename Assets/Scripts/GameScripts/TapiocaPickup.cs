@@ -17,6 +17,9 @@ public class TapiocaPickup : MonoBehaviour
     {
         m_SpriteRenderer = button.GetComponent<SpriteRenderer>();
         m_SpriteRenderer.sprite = m_unpressedSprite;
+        if (m_pressedSprite == null) {
+            m_pressedSprite = m_unpressedSprite;
+        }
 
         // Get the AudioSource component from the GameObject
         audioSource = GetComponent<AudioSource>();
