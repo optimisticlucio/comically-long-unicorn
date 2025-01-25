@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CupGenerator : MonoBehaviour
 {
-    [SerializeField] private DraggableBobaTea cupPrefab;  // Assign the DraggableBobaTea prefab in the Inspector
+    [SerializeField] public DraggableBobaTea cupPrefab;  // Assign the DraggableBobaTea prefab in the Inspector
     [SerializeField] private float spawnOffsetY = 1.0f;  // Offset above parent object
 
     private DraggableBobaTea currentCup;
@@ -26,13 +26,15 @@ public class CupGenerator : MonoBehaviour
         if (cupPrefab != null)
         {
             // Calculate spawn position (right above the parent's transform)
-            Vector3 spawnPosition = transform.position + new Vector3(0, spawnOffsetY, 0);
+            Vector3 localSpawnPosition = transform.localPosition + new Vector3(0, spawnOffsetY, 0);
 
             // Instantiate the cup and set it as the current cup
-            DraggableBobaTea newCup = Instantiate(cupPrefab, spawnPosition, Quaternion.identity);
+            DraggableBobaTea newCup = Instantiate(cupPrefab, localSpawnPosition, Quaternion.identity);
             newCup.transform.parent = transform;  // Optional: Keep cup under the generator
 
             currentCup = newCup.GetComponent<DraggableBobaTea>();
+
+            print("Cup spawned!");
 
             if (currentCup == null)
             {
