@@ -83,6 +83,8 @@ public class CustomerHolder : MonoBehaviour
                     isPlayingSound = false;
                     PlayRandomHappySound();
                     print("Customer is happy!");
+                    m_CustomerbubbleSpriteRenderer.enabled = false;
+                    Destroy(m_Cup.gameObject);
                     //TODO: Add score
                     isHappy = true;
                 }
