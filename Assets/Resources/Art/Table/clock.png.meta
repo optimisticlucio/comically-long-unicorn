@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: a76ba84549073ca42a23a600b5e9cba7
+guid: 621e55894d7258d49ab0b18945a969dd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1805912530626540383
-    second: CupHolder_0
-  - first:
-      213: -7400855599040328876
-    second: CupHolder_1
+      213: 8581363780399802525
+    second: clock_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,35 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CupHolder_0
+      name: clock_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 385
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1ac049c1f1c10f6e0800000000000000
-      internalID: -1805912530626540383
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CupHolder_1
-      rect:
-        serializedVersion: 2
-        x: 80
         y: 0
-        width: 212
-        height: 92
+        width: 489
+        height: 429
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 45b8d394b01ea4990800000000000000
-      internalID: -7400855599040328876
+      spriteID: d98222b64e0271770800000000000000
+      internalID: 8581363780399802525
       vertices: []
       indices: 
       edges: []
@@ -172,9 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      CupHolder_0: -1805912530626540383
-      CupHolder_1: -7400855599040328876
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

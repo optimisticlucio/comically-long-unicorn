@@ -135,7 +135,7 @@ public static class EnumExtensions {
 
         switch (self) {
             case BobaTea.Tapioca.Classic:
-                spriteResource += "classic";
+                spriteResource += "purple";
                 break;
             case BobaTea.Tapioca.Matcha:
                 spriteResource += "matcha";
