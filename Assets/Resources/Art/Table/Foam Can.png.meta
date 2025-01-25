@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Foam Can_0: 2396073464550605837
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
