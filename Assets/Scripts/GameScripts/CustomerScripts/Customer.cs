@@ -16,7 +16,7 @@ public class Customer
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -27,6 +27,12 @@ public class Customer
 
     public bool CompareToDesiredDrink(BobaTea givenDrink)
     {
+        Debug.Log("Comparing " + givenDrink + " to " + m_DesiredDrink);
+        Debug.Log("givingDrink: " + givenDrink.m_Liquid + " " + givenDrink.m_Tapioca + " " + givenDrink.m_Toppings);
+        Debug.Log("m_DesiredDrink: " + m_DesiredDrink.m_Liquid + " " + m_DesiredDrink.m_Tapioca + " " + m_DesiredDrink.m_Toppings);
+
+        Debug.Log("Sanity test = " + givenDrink.Equals(givenDrink));
+
         return givenDrink.Equals(m_DesiredDrink);
     }
 

@@ -22,7 +22,7 @@ public class CustomerGenerator : MonoBehaviour
     {
         // BASIC INGREDIENTS!
 
-        m_AvailableLiquids.Add(BobaTea.Liquid.BlackTea);
+        m_AvailableLiquids.Add(BobaTea.Liquid.Blueberry);
 
         m_AvailableTapiocas.Add(BobaTea.Tapioca.Classic);
 
