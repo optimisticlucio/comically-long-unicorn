@@ -21,22 +21,25 @@ public class BobaTea
 
     public BobaTea() {} // BASE CONSTRUCTOR! Insert code HERE, not above!
 
-    public void SetLiquid(BobaTea.Liquid i_Liquid) {
+    public bool SetLiquid(BobaTea.Liquid i_Liquid) {
         if (!m_Lidded){
             m_Liquid = i_Liquid;
         }
+        return !m_Lidded;
     }
 
-    public void SetTapioca(BobaTea.Tapioca i_Tapioca) {
+    public bool SetTapioca(BobaTea.Tapioca i_Tapioca) {
         if (!m_Lidded){
             m_Tapioca = i_Tapioca;
         }
+        return !m_Lidded;
     }
 
-    public void AddTopping(BobaTea.Topping i_Topping) {
+    public bool AddTopping(BobaTea.Topping i_Topping) {
         if (!m_Lidded){
             m_Toppings.Add(i_Topping);
         }
+        return !m_Lidded;
     }
 
     public void AddLid() {

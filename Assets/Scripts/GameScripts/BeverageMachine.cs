@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using NUnit.Framework;
 
 public class BeverageMachine : MonoBehaviour
 {
@@ -39,14 +40,14 @@ public class BeverageMachine : MonoBehaviour
     {
         if (m_LiquidArea.m_HeldCup != null)
         {
-            m_LiquidArea.m_HeldCup.m_BobaTea.SetLiquid(i_InsertedLiquid);
+            bool successfulPour = m_LiquidArea.m_HeldCup.m_BobaTea.SetLiquid(i_InsertedLiquid);
             // Play liquid sound
-            if (audioSource != null && liquidSound != null)
+            if (successfulPour && audioSource != null && liquidSound != null)
             {
                 audioSource.PlayOneShot(liquidSound);
             }
             m_LiquidArea.m_HeldCup.UpdateVisuals();
-            return true;
+            return successfulPour;
         }
         return false;
     }
