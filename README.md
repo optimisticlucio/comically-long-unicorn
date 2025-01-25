@@ -1,27 +1,26 @@
-#About
-This is a game developed by our team - Comically Long UnicoRn.
+# Baba Boba - by Comically Long UnicoRn
 
-Our team is built by 9 people who love gaming and this is the first game we made, ever.
+## About
+This is a game developed by our team - Comically Long UnicoRn.<br>
+Our team is built by 9 people who love gaming and this is the first game we made, ever.<br>
+The theme of the Game Jam was "Bubbles" and with that, we created our game - "Baba Boba".<br>
+The main Achievement of the game is that it was developed in less than 48 hours. It took the hard work of everyone on the Team.<br>
 
-The theme of the Game Jam was "Bubbles" and with that, we created our game - "Baba Boba".
+## Game Mechanics
+This is a shop management game where we run a Boba drink shop where each time, a customer will come, and ask for a specific drink (with the option of a Tapioca topping).<br>
+the player can grab the cup place it on the machine, and add the liquid and toppings he/she sees fit, and the customer will respond.<br>
 
-This is a shop management game were we run a Boba drink shop where each time, a customer will come, and ask for a specific drink (with the option of a Tapioca topping).
-
-the player can grab the cup place it on the machine, and add the liquid and toppings he/she sees fit, and the customer will respond.
-
-The main Achievement of the game is that it was developed in less than 48 hours. It took the hard work of everyone on the Team. 
-
-#The Game
-Link to the game:
+## The Game
+Link to the game:<br>
 https://optimisticlucio.itch.io/bababoba
 
-#Credits:
-Rinat Dahan - Production
-Frenando Legarda Waismann - Development
-Elad Fisher - Development
-Ron Ben-Atia - Sound
-Reut Hai - Sound
-Lital Bamnulker - Art
-Maya Fisher - Art
-Yaniv Sobol - Art
-Liron Ziskind - Art
+## Credits:
+Rinat Dahan - Production<br>
+Fernando Legarda Waismann - Development<br>
+Elad Fisher - Development<br>
+Ron Ben-Atia - Sound<br>
+Reut Hai - Sound<br>
+Lital Bamnulker - Art<br>
+Maya Fisher - Art<br>
+Yaniv Sobol - Art<br>
+Liron Ziskind - Art<br>
