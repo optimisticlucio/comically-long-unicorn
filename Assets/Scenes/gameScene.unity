@@ -139,6 +139,10 @@ PrefabInstance:
       propertyPath: m_DispensedTapioca
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3825421377113536077, guid: be131d6f5271b9e45a2c1664080e9393, type: 3}
+      propertyPath: m_ParentBeverageMachine
+      value: 
+      objectReference: {fileID: 1600120422}
     - target: {fileID: 6505864022869235033, guid: be131d6f5271b9e45a2c1664080e9393, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.09
@@ -334,6 +338,10 @@ PrefabInstance:
       propertyPath: m_DispensedTapioca
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3825421377113536077, guid: be131d6f5271b9e45a2c1664080e9393, type: 3}
+      propertyPath: m_ParentBeverageMachine
+      value: 
+      objectReference: {fileID: 1600120422}
     - target: {fileID: 6505864022869235033, guid: be131d6f5271b9e45a2c1664080e9393, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.35
@@ -769,6 +777,10 @@ PrefabInstance:
       propertyPath: m_DispensedTapioca
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3825421377113536077, guid: be131d6f5271b9e45a2c1664080e9393, type: 3}
+      propertyPath: m_ParentBeverageMachine
+      value: 
+      objectReference: {fileID: 1600120422}
     - target: {fileID: 6505864022869235033, guid: be131d6f5271b9e45a2c1664080e9393, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.5
@@ -968,6 +980,10 @@ PrefabInstance:
       propertyPath: m_DispensedTapioca
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3825421377113536077, guid: be131d6f5271b9e45a2c1664080e9393, type: 3}
+      propertyPath: m_ParentBeverageMachine
+      value: 
+      objectReference: {fileID: 1600120422}
     - target: {fileID: 6505864022869235033, guid: be131d6f5271b9e45a2c1664080e9393, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.35
@@ -1033,6 +1049,10 @@ PrefabInstance:
       propertyPath: m_DispensedTapioca
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3825421377113536077, guid: be131d6f5271b9e45a2c1664080e9393, type: 3}
+      propertyPath: m_ParentBeverageMachine
+      value: 
+      objectReference: {fileID: 1600120422}
     - target: {fileID: 6505864022869235033, guid: be131d6f5271b9e45a2c1664080e9393, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.5
@@ -1344,6 +1364,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6505864022869235033, guid: be131d6f5271b9e45a2c1664080e9393, type: 3}
   m_PrefabInstance: {fileID: 1807173777}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1600120422 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4850593634429712718, guid: 82307b72bb78c364393e9f5e32483af9, type: 3}
+  m_PrefabInstance: {fileID: 2081760489010964138}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a7e7e8d21c99fe4ba11fa2b162813c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1807173777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1364,6 +1395,10 @@ PrefabInstance:
       propertyPath: m_DispensedTapioca
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3825421377113536077, guid: be131d6f5271b9e45a2c1664080e9393, type: 3}
+      propertyPath: m_ParentBeverageMachine
+      value: 
+      objectReference: {fileID: 1600120422}
     - target: {fileID: 6505864022869235033, guid: be131d6f5271b9e45a2c1664080e9393, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.09
