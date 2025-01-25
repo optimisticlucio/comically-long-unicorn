@@ -4,6 +4,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] List<CustomerHolder> m_WaitingCustomers = new List<CustomerHolder>();
+
+    [SerializeField] List<GameObject> m_CustomerSpawnPoints = new List<GameObject>();
+    List<bool> m_SpawnPointHasCustomer = new List<bool>();
     [SerializeField] int m_MaxCustomersAtOnce = 1;
     [SerializeField] float m_DayTimeLeft = 60f;
 
@@ -59,14 +62,26 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-            // Generate and spawn a new customer
-            CustomerHolder newCustomer = m_CustomerGenerator.GenerateRandomCustomer();
-            
-            // Position the customer somewhere in the scene
-            newCustomer.transform.position = new Vector3(Random.Range(-5f, 5f), 0, 0);
+                // Generate and spawn a new customer
+                CustomerHolder newCustomer = m_CustomerGenerator.GenerateRandomCustomer();
+                
+                // Select an unused customer spawn point.
+                GameObject chosenSpawnPoint = null;
+                while (chosenSpawnPoint == null) {
+                    int spawnPointNum = UnityEngine.Random.Range(0, m_CustomerSpawnPoints.Count - 1);
+                    if (m_SpawnPointHasCustomer[spawnPointNum] == false) {
+                        // Put them in there!
+                        chosenSpawnPoint = m_CustomerSpawnPoints[spawnPointNum];
+                        m_SpawnPointHasCustomer[spawnPointNum] = true;
+                        newCustomer.m_SpawnPointUsed = spawnPointNum;
+                    }
+                }
 
-            m_WaitingCustomers.Add(newCustomer);
-            Debug.Log("New customer spawned!");
+                // Position the customer in the spawn point
+                newCustomer.transform.position = chosenSpawnPoint.transform.position;
+
+                m_WaitingCustomers.Add(newCustomer);
+                Debug.Log("New customer spawned!");
             }
         }
     }
@@ -78,6 +93,7 @@ public class GameManager : MonoBehaviour
             // TODO - Animation of customer happy and leaving!
             m_CustomerGenerator.DrinkSuccessfulyServed();
             m_EarnedMoney += s_PriceOfDrink;
+            m_SpawnPointHasCustomer[m_WaitingCustomers[i_CustomerNumber].m_SpawnPointUsed] = false;
             return true;
         }
         else

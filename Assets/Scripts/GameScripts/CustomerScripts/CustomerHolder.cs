@@ -19,6 +19,8 @@ public class CustomerHolder : MonoBehaviour
     [SerializeField] public float m_iterationOfAnnoyed = 3.0f;
     public float m_annoyedTimeWaiting = 0;
 
+    public int m_SpawnPointUsed = -1; // The Spawnpoint this customer is standing on.
+
     private bool isPlayingSound = false;  // Track if a sound is playing
 
     void Start()
