@@ -101,6 +101,7 @@ public class CustomerHolder : MonoBehaviour
         }
 
         m_CustomerSpriteRenderer.sprite = sprite;
+        m_CustomerSpriteRenderer.sortingLayerID = SortingLayer.NameToID("Customer");
 
         PlaySound(enterSound);
 
