@@ -4,7 +4,6 @@ public class TapiocaPickup : MonoBehaviour
 {
     [SerializeField] GameObject button;
     [SerializeField] BobaTea.Tapioca m_DispensedTapioca = BobaTea.Tapioca.None;
-
     [SerializeField] Sprite m_pressedSprite;
     [SerializeField] Sprite m_unpressedSprite;
     [SerializeField] private AudioClip clickSound;  // Drag audio clip here
