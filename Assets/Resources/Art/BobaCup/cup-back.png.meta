@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: cff3f5ce1437e2c4b934c50fae95f46b
+guid: fd9bb6ce6c137f746a400c152d5cff68
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5559561540143506820
-    second: classic_0
-  - first:
-      213: -351187673350281128
-    second: classic_1
+      213: 5597310374476758711
+    second: cup-back_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: classic_0
+      name: cup-back_0
       rect:
         serializedVersion: 2
-        x: 606
-        y: 289
-        width: 860
-        height: 446
+        x: 464
+        y: 284
+        width: 1116
+        height: 1599
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4856d23d3c7872d40800000000000000
-      internalID: 5559561540143506820
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: classic_1
-      rect:
-        serializedVersion: 2
-        x: 1462
-        y: 526
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 858e578fba4502bf0800000000000000
-      internalID: -351187673350281128
+      spriteID: 7bebb483124adad40800000000000000
+      internalID: 5597310374476758711
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      classic_0: 5559561540143506820
-      classic_1: -351187673350281128
+      cup-back_0: 5597310374476758711
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

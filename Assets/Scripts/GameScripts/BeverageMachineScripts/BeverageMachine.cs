@@ -44,6 +44,7 @@ public class BeverageMachine : MonoBehaviour
             // Play liquid sound
             if (successfulPour && audioSource != null && liquidSound != null)
             {
+                audioSource.Stop();
                 audioSource.PlayOneShot(liquidSound);
             }
             m_LiquidArea.m_HeldCup.UpdateVisuals();

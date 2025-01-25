@@ -58,6 +58,7 @@ public class BeverageMachineBtn : MonoBehaviour
         // Play click sound
         if (audioSource != null && clickSound != null)
         {
+            audioSource.Stop();
             audioSource.PlayOneShot(clickSound);
         }
         print("Mouse Clicked on Beverage Machine Btn");
