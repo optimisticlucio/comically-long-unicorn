@@ -25,6 +25,8 @@ public class CustomerHolder : MonoBehaviour
     private bool isPlayingSound = false;  // Track if a sound is playing
     private bool isHappy = false;
 
+    public GameManager m_ParentGameManager;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -60,6 +62,8 @@ public class CustomerHolder : MonoBehaviour
         if (isHappy)
         {
             print("Customer is happy, adding score");
+            m_ParentGameManager.m_SpawnPointHasCustomer[m_SpawnPointUsed] = false;
+            m_ParentGameManager.m_WaitingCustomers.Remove(this);
             Destroy(gameObject);
         }
     }

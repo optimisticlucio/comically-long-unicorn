@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] List<CustomerHolder> m_WaitingCustomers = new List<CustomerHolder>();
+    [SerializeField] public List<CustomerHolder> m_WaitingCustomers = new List<CustomerHolder>();
 
     [SerializeField] List<GameObject> m_CustomerSpawnPoints = new List<GameObject>();
-    List<bool> m_SpawnPointHasCustomer = new List<bool>();
+    public List<bool> m_SpawnPointHasCustomer = new List<bool>();
     [SerializeField] int m_MaxCustomersAtOnce = 1;
-    [SerializeField] float m_DayTimeLeft = 60f;
+    [SerializeField] float m_DayTimeLeft = 120f;
 
     int m_EarnedMoney = 0;
 
@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         UpdateDaytime();
+
+        //print("DAYTIME LEFT - " + m_DayTimeLeft + ", TIME TO CUSTOMER - " + m_TimeToNextCustomer);
 
         if (m_DayTimeLeft >= 0)
         {
@@ -66,12 +68,13 @@ public class GameManager : MonoBehaviour
             {
                 // Generate and spawn a new customer
                 CustomerHolder newCustomer = m_CustomerGenerator.GenerateRandomCustomer();
+                newCustomer.m_ParentGameManager = this;
                 
                 // Select an unused customer spawn point.
                 GameObject chosenSpawnPoint = null;
                 while (chosenSpawnPoint == null) {
                     int spawnPointNum = UnityEngine.Random.Range(0, m_CustomerSpawnPoints.Count - 1);
-                    print("Spawnpoint = " + spawnPointNum + ", range = " + m_CustomerSpawnPoints.Count + ", size of falselist = " + m_SpawnPointHasCustomer.Count);
+                    //print("Spawnpoint = " + spawnPointNum + ", range = " + m_CustomerSpawnPoints.Count + ", size of falselist = " + m_SpawnPointHasCustomer.Count);
                     if (m_SpawnPointHasCustomer[spawnPointNum] == false) {
 
                         // Put them in there!
@@ -87,23 +90,6 @@ public class GameManager : MonoBehaviour
                 m_WaitingCustomers.Add(newCustomer);
                 Debug.Log("New customer spawned!");
             }
-        }
-    }
-
-    bool GiveCustomerDrink(int i_CustomerNumber, BobaTea i_GivenDrink)
-    { // Returns true if correct drink.
-        if (m_WaitingCustomers[i_CustomerNumber].m_Customer.CompareToDesiredDrink(i_GivenDrink))
-        {
-            m_CustomerGenerator.DrinkSuccessfulyServed();
-            m_EarnedMoney += s_PriceOfDrink;
-            m_SpawnPointHasCustomer[m_WaitingCustomers[i_CustomerNumber].m_SpawnPointUsed] = false;
-            m_WaitingCustomers.RemoveAt(i_CustomerNumber);
-            return true;
-        }
-        else
-        {
-            // TODO - Give user indication of what's wrong! Noise, animation, whatever
-            return false;
         }
     }
 }
