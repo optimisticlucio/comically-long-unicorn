@@ -27,10 +27,6 @@ public class CustomerGenerator : MonoBehaviour
         m_AvailableTapiocas.Add(BobaTea.Tapioca.Classic);
 
         // No toppings to start
-        m_AvailableToppings.Add(BobaTea.Topping.None);
-
-
-
     }
 
     public void DrinkSuccessfulyServed()
@@ -96,9 +92,9 @@ public class CustomerGenerator : MonoBehaviour
         // Grabs random available items and tosses into a drink.
         BobaTea.Liquid randLiquid = GetRandomFromList(m_AvailableLiquids);
         BobaTea.Tapioca randTapioca = GetRandomFromList(m_AvailableTapiocas);
-        BobaTea.Topping randTopping = GetRandomFromList(m_AvailableToppings); // NOTE - Assumes only one topping.
+        // BobaTea.Topping randTopping = GetRandomFromList(m_AvailableToppings); // NOTE - Assumes only one topping.
 
-        return new BobaTea(randLiquid, randTapioca, randTopping);
+        return new BobaTea(randLiquid, randTapioca);
     }
 
     public T GetRandomFromList<T>(List<T> list)

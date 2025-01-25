@@ -19,6 +19,8 @@ public class BobaTea
         m_Toppings.Add(topping);
     }
 
+    public BobaTea(Liquid liquid, Tapioca tapioca) : this(liquid, tapioca, new HashSet<Topping>()) {}
+
     public BobaTea() {} // BASE CONSTRUCTOR! Insert code HERE, not above!
 
     public bool SetLiquid(BobaTea.Liquid i_Liquid) {
@@ -47,11 +49,19 @@ public class BobaTea
     }
 
     public override bool Equals(object obj)
-    {
-        BobaTea otherTea = obj as BobaTea;
-        if (otherTea is null) return false;
+    {   
+        //Debug.Log("USING EQUALITY CHECK");
+        if (obj is not BobaTea) return false;
+        
+        BobaTea otherTea = (BobaTea)obj;
+        /*Debug.Log("COMPARISON: Other object " + ((otherTea == null) ? "is" : "is not") + " bobaTea");
 
-        return (otherTea.m_Liquid == m_Liquid) && (otherTea.m_Tapioca == m_Tapioca) && otherTea.m_Toppings.SequenceEqual(m_Toppings) && (otherTea.m_Lidded == m_Lidded);
+        Debug.Log("OtherLiquid = " + otherTea.m_Liquid + ", Liquid = " + m_Liquid);
+        Debug.Log("OtherTap = " + otherTea.m_Tapioca + ", Tap = " + m_Tapioca);
+        Debug.Log(string.Join(",", otherTea.m_Toppings) + " VS " + string.Join(",", m_Toppings));
+        Debug.Log("OtherLid = " + otherTea.m_Lidded +  ", Lid = " + m_Lidded);*/
+
+        return (otherTea.m_Liquid == m_Liquid) && (otherTea.m_Tapioca == m_Tapioca) && otherTea.m_Toppings.SetEquals(m_Toppings) && (otherTea.m_Lidded == m_Lidded);
     }
     
 
@@ -78,7 +88,6 @@ public class BobaTea
     }
 
     public enum Topping {
-        None,
         Foam
     }
 }

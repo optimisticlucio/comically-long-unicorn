@@ -3,7 +3,7 @@ using UnityEngine;
 public class ToppingButton : MonoBehaviour
 {
     [SerializeField] GameObject button;
-    [SerializeField] BobaTea.Topping m_DispensedTopping = BobaTea.Topping.None;
+    [SerializeField] BobaTea.Topping m_DispensedTopping;
 
     [SerializeField] Sprite m_pressedSprite;
     [SerializeField] Sprite m_unpressedSprite;
