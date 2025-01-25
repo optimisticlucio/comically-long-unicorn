@@ -304,6 +304,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3927938009208956682, guid: 2660d72ea80e92d4096955b04db30a08, type: 3}
+      propertyPath: newGameLevel
+      value: gameScene
+      objectReference: {fileID: 0}
     - target: {fileID: 7809598140992617819, guid: 2660d72ea80e92d4096955b04db30a08, type: 3}
       propertyPath: m_Name
       value: BackGround
