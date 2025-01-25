@@ -35,7 +35,7 @@ public class BeverageMachine : MonoBehaviour
 
     }
 
-    public void AddLiquidToCup(BobaTea.Liquid i_InsertedLiquid)
+    public bool AddLiquidToCup(BobaTea.Liquid i_InsertedLiquid)
     {
         if (m_LiquidArea.m_HeldCup != null)
         {
@@ -46,16 +46,31 @@ public class BeverageMachine : MonoBehaviour
                 audioSource.PlayOneShot(liquidSound);
             }
             m_LiquidArea.m_HeldCup.UpdateVisuals();
+            return true;
         }
+        return false;
     }
 
-    public void AddTapiocaToCup(BobaTea.Tapioca i_InsertedTapioca)
+    public bool AddTapiocaToCup(BobaTea.Tapioca i_InsertedTapioca)
     {
         if (m_FoamAndToppingArea.m_HeldCup != null)
         {
             m_FoamAndToppingArea.m_HeldCup.m_BobaTea.SetTapioca(i_InsertedTapioca);
             m_LiquidArea.m_HeldCup.UpdateVisuals();
+            return true;
         }
+        return false;
+    }
+
+    public bool AddToppingToCup(BobaTea.Topping i_InsertedTopping) 
+    {
+        if (m_FoamAndToppingArea.m_HeldCup != null)
+        {
+            m_FoamAndToppingArea.m_HeldCup.m_BobaTea.AddTopping(i_InsertedTopping);
+            m_LiquidArea.m_HeldCup.UpdateVisuals();
+            return true;
+        }
+        return false;
     }
 
 }
