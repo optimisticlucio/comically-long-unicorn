@@ -109,6 +109,9 @@ public static class EnumExtensions {
             case BobaTea.Liquid.Blueberry:
                 spriteResource += "purple";
                 break;
+            case BobaTea.Liquid.None:
+                spriteResource += "";
+                break;
             default:
                 Debug.LogError("Attempted to get sprite of liquid with no assigned sprite. Returned null.");
                 spriteResource = "";
@@ -140,6 +143,9 @@ public static class EnumExtensions {
             case BobaTea.Tapioca.Peach:
                 spriteResource += "peach";
                 break;
+            case BobaTea.Tapioca.None:
+                spriteResource += "";
+                break;
             default:
                 Debug.LogError("Attempted to get floating sprite of tapioca with no assigned sprite. Returned null.");
                 spriteResource = "";
@@ -170,6 +176,9 @@ public static class EnumExtensions {
                 break;
             case BobaTea.Tapioca.Peach:
                 spriteResource += "peach";
+                break;
+            case BobaTea.Tapioca.None:
+                spriteResource += "";
                 break;
             default:
                 Debug.LogError("Attempted to get pickup sprite of tapioca with no assigned sprite. Returned null.");
