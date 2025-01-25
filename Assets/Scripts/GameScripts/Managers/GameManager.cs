@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     float m_TimeToNextCustomer = 5.0f;
 
-    [SerializeField] CustomerGenerator m_CustomerGenerator;
+    [SerializeField] public CustomerGenerator m_CustomerGenerator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

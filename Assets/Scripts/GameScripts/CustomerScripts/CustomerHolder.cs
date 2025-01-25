@@ -64,6 +64,7 @@ public class CustomerHolder : MonoBehaviour
             print("Customer is happy, adding score");
             m_ParentGameManager.m_SpawnPointHasCustomer[m_SpawnPointUsed] = false;
             m_ParentGameManager.m_WaitingCustomers.Remove(this);
+            m_ParentGameManager.m_CustomerGenerator.AdvanceComplexityLevel();
             Destroy(gameObject);
         }
     }
