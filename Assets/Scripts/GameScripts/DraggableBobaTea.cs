@@ -14,6 +14,21 @@ public class DraggableBobaTea : MonoBehaviour
 
     [SerializeField] SpriteRenderer m_LidSprite;
 
+    [SerializeField] private AudioClip grabSound;  // Drag audio clip here
+
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource component not found. Please add an AudioSource to the GameObject.");
+        }
+    }
+
+
     void Update()
     {
         if (!isDraggable) return;
@@ -42,6 +57,11 @@ public class DraggableBobaTea : MonoBehaviour
         if (hit.collider != null && hit.collider.gameObject == gameObject)
         {
             isDragging = true;
+            // Play grab sound 
+            if (audioSource != null && grabSound != null)
+            {
+                audioSource.PlayOneShot(grabSound);
+            }
             offset = transform.position - GetMouseWorldPosition();
         }
     }
@@ -51,26 +71,33 @@ public class DraggableBobaTea : MonoBehaviour
         transform.position = GetMouseWorldPosition() + offset;
     }
 
-    public void UpdateVisuals() {
-        if (m_LiquidSprite != null) {
+    public void UpdateVisuals()
+    {
+        if (m_LiquidSprite != null)
+        {
             m_LiquidSprite.sprite = m_BobaTea.m_Liquid.GetSprite();
             print("Updated liquid sprite! " + m_BobaTea.m_Liquid.GetSprite().name);
         }
-        else {
+        else
+        {
             Debug.LogError("Missing Liquid Sprite in cup!");
         }
 
-        if (m_TapiocaSprite != null) {
+        if (m_TapiocaSprite != null)
+        {
             m_TapiocaSprite.sprite = m_BobaTea.m_Tapioca.GetSpriteFloating();
         }
-        else {
+        else
+        {
             Debug.LogError("Missing Tapioca Sprite in cup!");
         }
 
-        if (m_LidSprite != null) {
+        if (m_LidSprite != null)
+        {
             m_LidSprite.enabled = m_BobaTea.m_Lidded;
         }
-        else {
+        else
+        {
             Debug.LogError("Missing Lid Sprite in cup!");
         }
     }

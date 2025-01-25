@@ -535,6 +535,14 @@ PrefabInstance:
       propertyPath: 'm_Buttons.Array.data[0]'
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6525129350367779589, guid: 82307b72bb78c364393e9f5e32483af9, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525129350367779589, guid: 82307b72bb78c364393e9f5e32483af9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8189559093287748722, guid: 82307b72bb78c364393e9f5e32483af9, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.55
