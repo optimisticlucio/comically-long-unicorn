@@ -21,7 +21,9 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        foreach (GameObject spawn in m_CustomerSpawnPoints) {
+            m_SpawnPointHasCustomer.Add(false);
+        }
     }
 
     // Update is called once per frame
@@ -69,7 +71,9 @@ public class GameManager : MonoBehaviour
                 GameObject chosenSpawnPoint = null;
                 while (chosenSpawnPoint == null) {
                     int spawnPointNum = UnityEngine.Random.Range(0, m_CustomerSpawnPoints.Count - 1);
+                    print("Spawnpoint = " + spawnPointNum + ", range = " + m_CustomerSpawnPoints.Count + ", size of falselist = " + m_SpawnPointHasCustomer.Count);
                     if (m_SpawnPointHasCustomer[spawnPointNum] == false) {
+
                         // Put them in there!
                         chosenSpawnPoint = m_CustomerSpawnPoints[spawnPointNum];
                         m_SpawnPointHasCustomer[spawnPointNum] = true;
