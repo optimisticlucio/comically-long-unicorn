@@ -59,15 +59,13 @@ public class CustomerHolder : MonoBehaviour
         if (cupCollider != null)
         {
             DraggableBobaTea cup = cupCollider.GetComponent<DraggableBobaTea>();
-            if (cup != null)
+            if (cup != null && !cup.isDragging)
             {
                 if (m_Customer.CompareToDesiredDrink(cup.m_BobaTea))
                 {
                     isPlayingSound = false;
                     PlayRandomHappySound();
                     print("Customer is happy!");
-                    Destroy(cup.gameObject);
-                    // Destroy(gameObject);
                 }
                 else
                 {
@@ -75,6 +73,7 @@ public class CustomerHolder : MonoBehaviour
                     if(!isPlayingSound)
                         PlaySound(angrySound);
                 }
+                Destroy(cup.gameObject);
             }
         }
     }

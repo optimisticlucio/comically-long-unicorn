@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DraggableBobaTea : MonoBehaviour
 {
-    private bool isDragging = false;
+    public bool isDragging = false;
     private Vector3 offset;
     private bool isDraggable = true;
 

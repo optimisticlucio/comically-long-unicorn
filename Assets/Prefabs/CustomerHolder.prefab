@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CustomerSpriteRenderer: {fileID: 0}
-  detectionRadius: 1
+  detectionRadius: 0.5
   layerMask:
     serializedVersion: 2
     m_Bits: 8
