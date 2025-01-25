@@ -4,7 +4,7 @@ public class DraggableBobaTea : MonoBehaviour
 {
     public bool isDragging = false;
     private Vector3 offset;
-    private bool isDraggable = true;
+    [SerializeField] public bool isDraggable = true;
 
     public BobaTea m_BobaTea = new BobaTea();
 
@@ -54,7 +54,7 @@ public class DraggableBobaTea : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hit = Physics2D.GetRayIntersection(ray);
 
-        if (hit.collider != null && hit.collider.gameObject == gameObject)
+        if (isDraggable && hit.collider != null && hit.collider.gameObject == gameObject)
         {
             isDragging = true;
             // Play grab sound 
