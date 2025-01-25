@@ -22,7 +22,7 @@ public class Customer
     // Update is called once per frame
     void Update()
     {
-
+        m_TimeWaiting += Time.deltaTime;
     }
 
     public bool CompareToDesiredDrink(BobaTea givenDrink)

@@ -10,6 +10,10 @@ public class CustomerHolder : MonoBehaviour
     void Update()
     {
         checkForCup();
+        if(m_Customer.isAnnoyed())
+        {
+            print("Customer is annoyed!");
+        } 
     }
 
     void checkForCup()
@@ -29,7 +33,7 @@ public class CustomerHolder : MonoBehaviour
                 }
                 else
                 {
-                    print("Customer is annoyed!");
+                    print("Not my cup");
                 }
             }
         }
