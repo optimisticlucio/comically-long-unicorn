@@ -14,7 +14,7 @@ public class CupHolder : MonoBehaviour
     {
         CheckForCup();
 
-        if(m_HeldCup.GetDraggable() == false)
+        if(m_HeldCup != null && m_HeldCup.GetDraggable() == false)
         {
             m_timeToReleaseCup -= Time.deltaTime;
             if(m_timeToReleaseCup <= 0)

@@ -4,7 +4,7 @@ using UnityEngine;
 public class Customer
 {
     public BobaTea m_DesiredDrink;
-    float m_TimeWaiting = 0;
+    public float m_TimeWaiting = 0;
     [SerializeField] float m_TimeToAnnoyed = 20f; // The amount of time until the customer leaves.
 
     public Customer(BobaTea drink)
@@ -20,7 +20,7 @@ public class Customer
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         m_TimeWaiting += Time.deltaTime;
     }

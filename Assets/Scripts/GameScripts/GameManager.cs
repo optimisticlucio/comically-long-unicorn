@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] int m_MaxCustomersAtOnce = 1;
     [SerializeField] float m_DayTimeLeft = 60f;
 
+    int m_EarnedMoney = 0;
+
+    [SerializeField] static int s_PriceOfDrink = 10;
+
     float m_TimeToNextCustomer = 5f;
 
     [SerializeField] CustomerGenerator m_CustomerGenerator;
@@ -73,6 +77,7 @@ public class GameManager : MonoBehaviour
         {
             // TODO - Animation of customer happy and leaving!
             m_CustomerGenerator.DrinkSuccessfulyServed();
+            m_EarnedMoney += s_PriceOfDrink;
             return true;
         }
         else

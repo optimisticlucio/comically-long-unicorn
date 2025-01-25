@@ -9,7 +9,9 @@ public class CustomerHolder : MonoBehaviour
 
     void Update()
     {
+        m_Customer.Update();
         checkForCup();
+
         if(m_Customer.isAnnoyed())
         {
             print("Customer is annoyed!");
@@ -49,6 +51,9 @@ public class CustomerHolder : MonoBehaviour
     public void Initialize(Customer customer, Sprite sprite)
     {
         m_Customer = customer;
+        if(m_Customer == null) {
+            print("Customer not successfully set.");
+        }
 
         // Ensure the SpriteRenderer is assigned (Add it dynamically if missing)
         if (m_CustomerSpriteRenderer == null)
