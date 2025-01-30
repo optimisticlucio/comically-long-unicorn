@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     void UpdateDaytime()
     {
-        m_DayTimeLeft -= Time.deltaTime;
+        // m_DayTimeLeft -= Time.deltaTime; // TURNED OFF DAYTIME
 
         // TODO - Check if day is over?
     }

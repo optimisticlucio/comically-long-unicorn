@@ -52,14 +52,23 @@ public class CustomerGenerator : MonoBehaviour
 
             case 2:
                 m_AvailableLiquids.Add(BobaTea.Liquid.GreenTea);
+                m_AvailableLiquids.Add(BobaTea.Liquid.Matcha);
                 m_DrinksToNextComplexity = 3;
                 break;
 
             case 3:
                 m_AvailableLiquids.Add(BobaTea.Liquid.Strawberry);
-                m_AvailableLiquids.Add(BobaTea.Liquid.Matcha);
                 m_AvailableTapiocas.Add(BobaTea.Tapioca.Matcha);
                 m_DrinksToNextComplexity = 6;
+                break;
+
+            case 4:
+                m_AvailableLiquids.Add(BobaTea.Liquid.Banana);
+                m_AvailableLiquids.Add(BobaTea.Liquid.Peach);
+                m_AvailableTapiocas.Add(BobaTea.Tapioca.Pineapple);
+                m_AvailableTapiocas.Add(BobaTea.Tapioca.Strawberry);
+                m_AvailableTapiocas.Add(BobaTea.Tapioca.Coffee);
+                m_DrinksToNextComplexity = 12;
                 break;
 
             default:
